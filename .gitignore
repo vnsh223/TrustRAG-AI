@@ -1,0 +1,42 @@
+
+# Secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+backend/venv/
+venv/
+.venv/
+
+# Uploaded files and databases
+backend/uploads/
+backend/chroma_db/
+*.db
+*.sqlite3
+
+# Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+
+# Evaluation outputs
+evaluation/evaluation_report.json
+
+# OS files
+.DS_Store
+
+# Local Chroma database backups
+backend/chroma_db_backup_before_auth/
+
+# Evaluation generated outputs
+evaluation/report_*.json
+evaluation/*.log
+
+# Backup configuration files
+frontend/next.config.backup.ts
