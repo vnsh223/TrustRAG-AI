@@ -26,8 +26,8 @@ textarea {
 }
 
 ::selection {
-  background: #dbeafe;
-  color: #1d4ed8;
+  background: #a7f3d0;
+  color: #064e3b;
 }
 
 @keyframes float-a {
@@ -55,6 +55,8 @@ textarea {
 .anim-rise { animation: rise 0.5s ease-out both; }
 .anim-bar { animation: grow-bar 1s ease-out both; }
 
+/* ---------- Animated glowing border (message box) ---------- */
+
 @property --border-angle {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -76,8 +78,8 @@ textarea {
     from var(--border-angle),
     rgba(255, 255, 255, 0.08) 0%,
     rgba(255, 255, 255, 0.08) 55%,
-    #22d3ee 75%,
-    #6366f1 90%,
+    #34d399 75%,
+    #14b8a6 90%,
     rgba(255, 255, 255, 0.08) 100%
   );
   animation: spin-border 5s linear infinite;

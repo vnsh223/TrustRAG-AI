@@ -139,15 +139,15 @@ export default function AuthScreen({
   }
 
   const inputClass =
-    "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-[15px] text-white placeholder:text-slate-500 outline-none transition hover:border-white/20 focus:border-cyan-400/60 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(34,211,238,0.12)]";
+    "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-[15px] text-white placeholder:text-slate-500 outline-none transition hover:border-white/20 focus:border-emerald-400/60 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(52,211,153,0.12)]";
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#05070d] text-white">
       {/* ===== background ===== */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="anim-float-a absolute -left-40 -top-40 h-[560px] w-[560px] rounded-full bg-cyan-500/25 blur-[130px]" />
-        <div className="anim-float-b absolute -bottom-48 right-0 h-[620px] w-[620px] rounded-full bg-indigo-600/30 blur-[140px]" />
-        <div className="anim-float-a absolute left-1/2 top-1/3 h-[360px] w-[360px] rounded-full bg-fuchsia-500/10 blur-[120px]" />
+        <div className="anim-float-a absolute -left-40 -top-40 h-[560px] w-[560px] rounded-full bg-emerald-500/25 blur-[130px]" />
+        <div className="anim-float-b absolute -bottom-48 right-0 h-[620px] w-[620px] rounded-full bg-teal-600/30 blur-[140px]" />
+        <div className="anim-float-a absolute left-1/2 top-1/3 h-[360px] w-[360px] rounded-full bg-teal-400/10 blur-[120px]" />
         <div
           className="absolute inset-0 opacity-[0.35]"
           style={{
@@ -166,12 +166,12 @@ export default function AuthScreen({
         {/* ===== LEFT: brand + live demo ===== */}
         <section className="hidden lg:block">
           <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-indigo-500 text-lg font-bold shadow-[0_0_30px_rgba(34,211,238,0.45)]">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-lg font-bold shadow-[0_0_30px_rgba(52,211,153,0.45)]">
               T
             </div>
             <div>
               <div className="text-xl font-semibold tracking-tight">
-                TrustRAG <span className="text-cyan-300">AI</span>
+                TrustRAG <span className="text-emerald-300">AI</span>
               </div>
               <p className="text-[10px] tracking-[2px] text-slate-400">
                 INTELLIGENCE YOU CAN TRUST
@@ -182,7 +182,7 @@ export default function AuthScreen({
           <h1 className="mt-10 text-5xl font-semibold leading-[1.08] tracking-tight xl:text-6xl">
             Every answer,
             <br />
-            <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
               checked before
             </span>
             <br />
@@ -211,7 +211,7 @@ export default function AuthScreen({
             <div className="rounded-xl bg-white/[0.05] px-4 py-3 text-sm text-slate-200">
               {QUESTION.slice(0, typed)}
               {step === 0 && (
-                <span className="anim-blink ml-0.5 inline-block h-4 w-[2px] translate-y-[3px] bg-cyan-300" />
+                <span className="anim-blink ml-0.5 inline-block h-4 w-[2px] translate-y-[3px] bg-emerald-300" />
               )}
               {step === 0 && typed === 0 && (
                 <span className="text-slate-500">Ask anything…</span>
@@ -234,7 +234,7 @@ export default function AuthScreen({
                       {s.name}{" "}
                       <span className="text-slate-500">· {s.where}</span>
                     </span>
-                    <span className="text-cyan-300">{s.score}% match</span>
+                    <span className="text-emerald-300">{s.score}% match</span>
                   </div>
                 ))}
               </div>
@@ -242,7 +242,7 @@ export default function AuthScreen({
 
             {/* answer */}
             {step >= 2 && step < 4 && (
-              <div className="anim-rise mt-4 rounded-xl border border-cyan-400/15 bg-cyan-400/[0.05] px-4 py-3 text-sm leading-relaxed text-slate-200">
+              <div className="anim-rise mt-4 rounded-xl border border-teal-400/20 bg-teal-400/[0.06] px-4 py-3 text-sm leading-relaxed text-slate-200">
                 Your resume lists three projects, including a document Q&amp;A
                 app with an AI judge.
               </div>
@@ -268,7 +268,7 @@ export default function AuthScreen({
                       </div>
                       <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
                         <div
-                          className="anim-bar h-full rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400"
+                          className="anim-bar h-full rounded-full bg-gradient-to-r from-teal-400 to-emerald-300"
                           style={{ width: `${m.value}%` }}
                         />
                       </div>
@@ -308,21 +308,21 @@ export default function AuthScreen({
               className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
               style={{
                 background:
-                  "radial-gradient(380px circle at var(--mx, 50%) var(--my, 0%), rgba(56,189,248,0.14), transparent 60%)",
+                  "radial-gradient(380px circle at var(--mx, 50%) var(--my, 0%), rgba(52,211,153,0.14), transparent 60%)",
               }}
             />
             {/* top glow line */}
-            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent" />
+            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/70 to-transparent" />
 
             <div className="relative">
               {/* mobile brand */}
               <div className="mb-8 flex items-center gap-3 lg:hidden">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-indigo-500 font-bold">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 font-bold">
                   T
                 </div>
                 <div>
                   <p className="text-lg font-semibold">
-                    TrustRAG <span className="text-cyan-300">AI</span>
+                    TrustRAG <span className="text-emerald-300">AI</span>
                   </p>
                   <p className="text-[10px] tracking-[2px] text-slate-400">
                     INTELLIGENCE YOU CAN TRUST
@@ -330,14 +330,14 @@ export default function AuthScreen({
                 </div>
               </div>
 
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300">
                 {isLogin ? "Welcome back" : "Get started"}
               </p>
 
               <h2 className="mt-2 text-3xl font-semibold tracking-tight">
                 {isLogin ? "Sign in to your" : "Create your"}
                 <br />
-                <span className="bg-gradient-to-r from-cyan-300 to-indigo-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-emerald-300 to-teal-400 bg-clip-text text-transparent">
                   {isLogin ? "workspace." : "account."}
                 </span>
               </h2>
@@ -444,7 +444,7 @@ export default function AuthScreen({
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-semibold text-slate-400 transition hover:text-cyan-300"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-semibold text-slate-400 transition hover:text-emerald-300"
                       aria-label={
                         showPassword ? "Hide password" : "Show password"
                       }
@@ -458,7 +458,7 @@ export default function AuthScreen({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="group/btn relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-500 px-4 py-4 text-sm font-semibold text-white shadow-[0_10px_40px_rgba(56,189,248,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_10px_50px_rgba(56,189,248,0.55)] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+                  className="group/btn relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-600 px-4 py-4 text-sm font-semibold text-white shadow-[0_10px_40px_rgba(20,184,166,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_10px_50px_rgba(20,184,166,0.55)] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     {loading ? (
@@ -482,7 +482,7 @@ export default function AuthScreen({
 
               {/* Security information */}
               <div className="mt-7 flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4">
-                <div className="mt-0.5 text-cyan-300">♢</div>
+                <div className="mt-0.5 text-emerald-300">♢</div>
                 <div>
                   <p className="text-xs font-semibold text-slate-200">
                     Your workspace, your privacy

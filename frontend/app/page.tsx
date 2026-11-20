@@ -109,7 +109,7 @@ function statusTone(status?: string) {
   if (s === "VERIFIED")
     return {
       label: "Verified",
-      bar: "bg-gradient-to-r from-cyan-400 to-emerald-400",
+      bar: "bg-gradient-to-r from-emerald-400 to-green-300",
       chip: "bg-emerald-400/10 text-emerald-300 ring-emerald-400/30",
     };
   if (s === "BLOCK")
@@ -223,7 +223,7 @@ function AnswerBody({ content, onCite }: { content: string; onCite: (n: number) 
                 <button
                   type="button"
                   onClick={() => onCite(n)}
-                  className="mx-0.5 inline-flex h-[18px] min-w-[18px] -translate-y-0.5 items-center justify-center rounded bg-gradient-to-br from-cyan-400 to-indigo-500 px-1 font-sans text-[10px] font-semibold text-white shadow-[0_0_12px_rgba(34,211,238,0.35)] transition hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+                  className="mx-0.5 inline-flex h-[18px] min-w-[18px] -translate-y-0.5 items-center justify-center rounded bg-gradient-to-br from-emerald-400 to-teal-600 px-1 font-sans text-[10px] font-semibold text-white shadow-[0_0_12px_rgba(52,211,153,0.35)] transition hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
                   aria-label={`Open source ${n}`}
                 >
                   {children}
@@ -231,17 +231,17 @@ function AnswerBody({ content, onCite }: { content: string; onCite: (n: number) 
               );
             }
             return (
-              <a href={href} target="_blank" rel="noreferrer" className="text-cyan-300 underline underline-offset-2">
+              <a href={href} target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-2">
                 {children}
               </a>
             );
           },
           p: ({ children }) => <p className="mb-4 last:mb-0">{children}</p>,
-          ul: ({ children }) => <ul className="mb-4 list-disc space-y-1.5 pl-6 marker:text-cyan-400">{children}</ul>,
-          ol: ({ children }) => <ol className="mb-4 list-decimal space-y-1.5 pl-6 marker:text-cyan-400">{children}</ol>,
+          ul: ({ children }) => <ul className="mb-4 list-disc space-y-1.5 pl-6 marker:text-emerald-400">{children}</ul>,
+          ol: ({ children }) => <ol className="mb-4 list-decimal space-y-1.5 pl-6 marker:text-emerald-400">{children}</ol>,
           strong: ({ children }) => <strong className="font-semibold text-white">{children}</strong>,
           code: ({ children }) => (
-            <code className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-[13px] text-cyan-200">{children}</code>
+            <code className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-[13px] text-emerald-200">{children}</code>
           ),
         }}
       >
@@ -298,12 +298,12 @@ function Passage({
       id={`passage-${source.source_number}`}
       className={`anim-rise rounded-xl border p-4 transition ${
         selected
-          ? "border-cyan-400/60 bg-cyan-400/[0.06] shadow-[0_0_30px_rgba(34,211,238,0.18)]"
+          ? "border-emerald-400/60 bg-emerald-400/[0.06] shadow-[0_0_30px_rgba(52,211,153,0.18)]"
           : "border-white/10 bg-white/[0.03] hover:border-white/20"
       }`}
     >
       <div className="mb-3 flex items-center gap-2">
-        <span className="flex h-5 min-w-5 items-center justify-center rounded bg-gradient-to-br from-cyan-400 to-indigo-500 px-1 text-[11px] font-semibold text-white">
+        <span className="flex h-5 min-w-5 items-center justify-center rounded bg-gradient-to-br from-emerald-400 to-teal-600 px-1 text-[11px] font-semibold text-white">
           {source.source_number}
         </span>
         <span className="min-w-0 flex-1 truncate text-xs text-slate-400">
@@ -334,7 +334,7 @@ function Passage({
         {long && (
           <button
             onClick={() => setOpen((v) => !v)}
-            className="rounded-md px-2 py-1 font-medium text-cyan-300 hover:bg-cyan-400/10"
+            className="rounded-md px-2 py-1 font-medium text-emerald-300 hover:bg-emerald-400/10"
           >
             {open ? "Show less" : "Show full passage"}
           </button>
@@ -795,7 +795,7 @@ export default function Home() {
   }
 
   const selectClass =
-    "rounded-lg border border-white/10 bg-white/[0.05] px-2.5 py-1.5 text-sm text-slate-200 outline-none transition hover:border-white/20 focus:border-cyan-400/60";
+    "rounded-lg border border-white/10 bg-white/[0.05] px-2.5 py-1.5 text-sm text-slate-200 outline-none transition hover:border-white/20 focus:border-emerald-400/60";
 
   return (
     <main
@@ -811,9 +811,9 @@ export default function Home() {
     >
       {/* ===== background ===== */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="anim-float-a absolute -left-40 -top-40 h-[560px] w-[560px] rounded-full bg-cyan-500/20 blur-[130px]" />
-        <div className="anim-float-b absolute -bottom-48 right-0 h-[620px] w-[620px] rounded-full bg-indigo-600/25 blur-[140px]" />
-        <div className="anim-float-a absolute left-1/2 top-1/3 h-[360px] w-[360px] rounded-full bg-fuchsia-500/10 blur-[120px]" />
+        <div className="anim-float-a absolute -left-40 -top-40 h-[560px] w-[560px] rounded-full bg-emerald-500/20 blur-[130px]" />
+        <div className="anim-float-b absolute -bottom-48 right-0 h-[620px] w-[620px] rounded-full bg-teal-600/25 blur-[140px]" />
+        <div className="anim-float-a absolute left-1/2 top-1/3 h-[360px] w-[360px] rounded-full bg-teal-400/10 blur-[120px]" />
         <div
           className="absolute inset-0 opacity-[0.3]"
           style={{
@@ -840,8 +840,8 @@ export default function Home() {
 
       {dragging && (
         <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center bg-[#05070d]/70 backdrop-blur-sm">
-          <div className="rounded-2xl border-2 border-dashed border-cyan-400/70 bg-white/[0.05] px-10 py-8 text-center shadow-[0_0_60px_rgba(34,211,238,0.25)] backdrop-blur-xl">
-            <p className="text-base font-medium text-cyan-200">Drop to add this document</p>
+          <div className="rounded-2xl border-2 border-dashed border-emerald-400/70 bg-white/[0.05] px-10 py-8 text-center shadow-[0_0_60px_rgba(52,211,153,0.25)] backdrop-blur-xl">
+            <p className="text-base font-medium text-emerald-200">Drop to add this document</p>
             <p className="mt-1 text-sm text-slate-400">PDF, DOCX or TXT</p>
           </div>
         </div>
@@ -850,12 +850,12 @@ export default function Home() {
       {/* ---------- Sidebar ---------- */}
       <aside className="relative z-10 hidden w-[280px] shrink-0 flex-col border-r border-white/10 bg-white/[0.03] p-4 backdrop-blur-xl md:flex">
         <div className="mb-5 flex items-center gap-3 px-1">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-indigo-500 text-[15px] font-bold text-white shadow-[0_0_24px_rgba(34,211,238,0.4)]">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-[15px] font-bold text-white shadow-[0_0_24px_rgba(52,211,153,0.4)]">
             T
           </div>
           <div>
             <h1 className="text-[15px] font-semibold tracking-tight">
-              TrustRAG <span className="text-cyan-300">AI</span>
+              TrustRAG <span className="text-emerald-300">AI</span>
             </h1>
             <p className="text-xs text-slate-400">Answers you can check</p>
           </div>
@@ -863,14 +863,14 @@ export default function Home() {
 
         <button
           onClick={newChat}
-          className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-500 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_8px_30px_rgba(56,189,248,0.3)] transition hover:-translate-y-0.5 hover:shadow-[0_8px_36px_rgba(56,189,248,0.5)]"
+          className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-600 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_8px_30px_rgba(20,184,166,0.3)] transition hover:-translate-y-0.5 hover:shadow-[0_8px_36px_rgba(20,184,166,0.5)]"
         >
           <span className="text-base leading-none">+</span> New chat
         </button>
         <button
           onClick={() => fileInputRef.current?.click()}
           disabled={uploading}
-          className="mt-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-cyan-400/50 hover:bg-white/[0.07] disabled:opacity-60"
+          className="mt-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-400/50 hover:bg-white/[0.07] disabled:opacity-60"
         >
           {uploading ? "Indexing document…" : "Add document"}
         </button>
@@ -887,7 +887,7 @@ export default function Home() {
                     <div
                       className={`group flex items-center gap-1 rounded-xl px-3 py-2 transition ${
                         s.id === activeSessionId
-                          ? "bg-white/[0.08] ring-1 ring-cyan-400/30 shadow-[0_0_20px_rgba(34,211,238,0.08)]"
+                          ? "bg-white/[0.08] ring-1 ring-emerald-400/30 shadow-[0_0_20px_rgba(52,211,153,0.08)]"
                           : "hover:bg-white/[0.05]"
                       }`}
                     >
@@ -957,7 +957,7 @@ export default function Home() {
             <>
               <div className="mt-2.5 flex h-2 overflow-hidden rounded-full bg-white/10">
                 <div
-                  className="bg-gradient-to-r from-cyan-400 to-emerald-400"
+                  className="bg-gradient-to-r from-emerald-400 to-green-300"
                   style={{ width: `${(stats.verified / stats.total) * 100}%` }}
                 />
                 <div className="bg-amber-400" style={{ width: `${(stats.review / stats.total) * 100}%` }} />
@@ -1027,7 +1027,7 @@ export default function Home() {
             </button>
             <button
               onClick={newChat}
-              className="rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm font-medium text-slate-200 transition hover:border-cyan-400/50 hover:bg-white/[0.07]"
+              className="rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm font-medium text-slate-200 transition hover:border-emerald-400/50 hover:bg-white/[0.07]"
             >
               New chat
             </button>
@@ -1041,7 +1041,7 @@ export default function Home() {
                 <h2 className="text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-[44px]">
                   Ask your document.
                   <br />
-                  <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-indigo-400 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
                     See the proof.
                   </span>
                 </h2>
@@ -1056,7 +1056,7 @@ export default function Home() {
                       <button
                         key={s}
                         onClick={() => void send(s)}
-                        className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-left text-sm leading-6 text-slate-300 backdrop-blur transition hover:-translate-y-0.5 hover:border-cyan-400/50 hover:bg-white/[0.07] hover:text-white"
+                        className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-left text-sm leading-6 text-slate-300 backdrop-blur transition hover:-translate-y-0.5 hover:border-emerald-400/50 hover:bg-white/[0.07] hover:text-white"
                       >
                         {s}
                       </button>
@@ -1065,7 +1065,7 @@ export default function Home() {
                 ) : (
                   <button
                     onClick={() => fileInputRef.current?.click()}
-                    className="mt-8 w-fit rounded-xl bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_40px_rgba(56,189,248,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_10px_50px_rgba(56,189,248,0.55)]"
+                    className="mt-8 w-fit rounded-xl bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-600 px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_40px_rgba(20,184,166,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_10px_50px_rgba(20,184,166,0.55)]"
                   >
                     Add a document to start
                   </button>
@@ -1077,7 +1077,7 @@ export default function Home() {
               if (message.role === "user") {
                 return (
                   <div key={message.id} className="anim-rise mb-8 flex justify-end">
-                    <div className="max-w-[85%] rounded-2xl rounded-br-md bg-gradient-to-br from-cyan-500 to-indigo-600 px-4 py-3 text-sm leading-6 text-white shadow-[0_8px_30px_rgba(56,189,248,0.25)]">
+                    <div className="max-w-[85%] rounded-2xl rounded-br-md bg-gradient-to-br from-emerald-500 to-teal-700 px-4 py-3 text-sm leading-6 text-white shadow-[0_8px_30px_rgba(20,184,166,0.25)]">
                       {message.content}
                     </div>
                   </div>
@@ -1105,7 +1105,7 @@ export default function Home() {
                       <button
                         onClick={() => setFocus({ messageId: message.id })}
                         className={`rounded-md px-2 py-1 font-medium transition hover:bg-white/10 ${
-                          railMessage?.id === message.id ? "bg-cyan-400/10 text-cyan-300" : ""
+                          railMessage?.id === message.id ? "bg-emerald-400/10 text-emerald-300" : ""
                         }`}
                       >
                         {sourceCount} source{sourceCount === 1 ? "" : "s"}
@@ -1145,9 +1145,9 @@ export default function Home() {
             {asking && (
               <div className="flex items-center gap-3 py-3 text-sm text-slate-400" role="status">
                 <span className="flex gap-1">
-                  <span className="h-2 w-2 animate-bounce rounded-full bg-cyan-400 [animation-delay:-0.3s]" />
-                  <span className="h-2 w-2 animate-bounce rounded-full bg-sky-400 [animation-delay:-0.15s]" />
-                  <span className="h-2 w-2 animate-bounce rounded-full bg-indigo-400" />
+                  <span className="h-2 w-2 animate-bounce rounded-full bg-emerald-300 [animation-delay:-0.3s]" />
+                  <span className="h-2 w-2 animate-bounce rounded-full bg-teal-400 [animation-delay:-0.15s]" />
+                  <span className="h-2 w-2 animate-bounce rounded-full bg-teal-500" />
                 </span>
                 Thinking…
               </div>
@@ -1161,7 +1161,7 @@ export default function Home() {
         <div className="shrink-0 border-t border-white/10 bg-white/[0.02] px-4 pb-4 pt-3 backdrop-blur-xl md:px-8">
           <div className="mx-auto max-w-2xl">
             {notice && (
-              <p className="mb-2 text-sm text-cyan-200/80" role="status">
+              <p className="mb-2 text-sm text-emerald-200/80" role="status">
                 {notice}
               </p>
             )}
@@ -1205,7 +1205,7 @@ export default function Home() {
                       <select
                         value={topK}
                         onChange={(e) => setTopK(Number(e.target.value))}
-                        className="rounded-md border border-white/10 bg-white/[0.05] px-1.5 py-1 text-slate-200 outline-none focus:border-cyan-400/60"
+                        className="rounded-md border border-white/10 bg-white/[0.05] px-1.5 py-1 text-slate-200 outline-none focus:border-emerald-400/60"
                       >
                         {[2, 3, 5, 8].map((n) => (
                           <option key={n} value={n} className="bg-[#0b1220]">
@@ -1224,7 +1224,7 @@ export default function Home() {
                           aria-pressed={mode === m}
                           className={`px-2.5 py-1 capitalize transition ${
                             mode === m
-                              ? "bg-gradient-to-r from-cyan-500 to-indigo-500 text-white"
+                              ? "bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
                               : "bg-white/[0.03] text-slate-400 hover:bg-white/10"
                           }`}
                         >
@@ -1237,7 +1237,7 @@ export default function Home() {
                   <button
                     type="submit"
                     disabled={!question.trim() || asking || uploading}
-                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-indigo-500 text-lg text-white shadow-[0_6px_24px_rgba(56,189,248,0.4)] transition hover:scale-105 disabled:cursor-not-allowed disabled:bg-none disabled:bg-white/10 disabled:text-slate-500 disabled:shadow-none disabled:hover:scale-100"
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-lg text-white shadow-[0_6px_24px_rgba(20,184,166,0.4)] transition hover:scale-105 disabled:cursor-not-allowed disabled:bg-none disabled:bg-white/10 disabled:text-slate-500 disabled:shadow-none disabled:hover:scale-100"
                     aria-label="Send message"
                   >
                     ↑
@@ -1257,7 +1257,7 @@ export default function Home() {
       <aside className="relative z-10 hidden w-[420px] shrink-0 flex-col border-l border-white/10 bg-white/[0.03] backdrop-blur-xl lg:flex">
         <div className="flex h-14 shrink-0 items-center justify-between border-b border-white/10 px-5">
           <h3 className="flex items-center gap-2 text-sm font-semibold text-white">
-            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.9)]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
             Evidence
           </h3>
           {railMessage?.sources && railMessage.sources.length > 0 && (
@@ -1268,7 +1268,7 @@ export default function Home() {
                   onClick={() => setFocus({ messageId: railMessage.id, source: s.source_number })}
                   className={`h-6 min-w-6 rounded px-1.5 text-xs font-semibold transition ${
                     focus?.source === s.source_number
-                      ? "bg-gradient-to-br from-cyan-400 to-indigo-500 text-white shadow-[0_0_12px_rgba(34,211,238,0.4)]"
+                      ? "bg-gradient-to-br from-emerald-400 to-teal-600 text-white shadow-[0_0_12px_rgba(52,211,153,0.4)]"
                       : "bg-white/[0.06] text-slate-400 hover:bg-white/10 hover:text-white"
                   }`}
                   aria-label={`Jump to source ${s.source_number}`}
