@@ -28,8 +28,6 @@ If the judge itself fails, the answer is **not released**. The system fails clos
 <!--
 ## Screenshots
 
-Add your screenshots to a `docs/` folder, then remove this comment markers.
-
 | Login | Workspace |
 |---|---|
 | ![Login page](docs/login.png) | ![Workspace](docs/workspace.png) |
