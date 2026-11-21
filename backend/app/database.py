@@ -1,10 +1,10 @@
 
 import sqlite3
 from pathlib import Path
+import os 
 
 # Store the database inside the backend folder
-DB_PATH = Path(__file__).resolve().parent.parent / "users.db"
-
+DB_PATH = Path(os.getenv("DATA_DIR", Path(__file__).resolve().parent.parent)) / "users.db"
 
 # 1. Create the users table
 def init_db():

@@ -4,9 +4,10 @@ import uuid
 
 import chromadb
 from chromadb.utils.embedding_functions import DefaultEmbeddingFunction
+import os
 
 
-DB_PATH = Path(__file__).resolve().parent.parent / "chroma_db"
+DB_PATH = Path(os.getenv("DATA_DIR", Path(__file__).resolve().parent.parent)) / "chroma_db"
 
 client = chromadb.PersistentClient(path=str(DB_PATH))
 

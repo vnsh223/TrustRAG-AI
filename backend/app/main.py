@@ -5,6 +5,7 @@ from zipfile import BadZipFile
 from hashlib import sha256
 from typing import Literal
 import sqlite3
+import os
 
 from fastapi import Depends, FastAPI, UploadFile, File, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
@@ -209,7 +210,7 @@ app.add_middleware(
 # Upload settings
 # --------------------------------------------------
 
-UPLOAD_DIR = Path(__file__).resolve().parent.parent / "uploads"
+UPLOAD_DIR = Path(os.getenv("DATA_DIR", Path(__file__).resolve().parent.parent)) / "uploads"
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 # Maximum upload size: 50 MB

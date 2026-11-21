@@ -40,3 +40,4 @@ evaluation/*.log
 
 # Backup configuration files
 frontend/next.config.backup.ts
+.vscode/
