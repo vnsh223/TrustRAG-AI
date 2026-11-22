@@ -6,7 +6,9 @@
 
 A secure, document-grounded Q&A app where a second AI **judges every answer** against your document before showing it, and every claim comes with clickable citations.
 
-[![Docker build](https://github.com/vnsh223/TrustRAG-AI/actions/workflows/docker.yml/badge.svg)](https://github.com/vnsh223/TrustRAG-AI/actions/workflows/docker.yml)
+[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-vnsh11-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/u/vnsh11)
+[![Docker build](https://github.com/vnsh223/TrustRAG-AI/actions/workflows/docker.yml/badge.svg)]
+(https://github.com/vnsh223/TrustRAG-AI/actions/workflows/docker.yml)
 ![Python](https://img.shields.io/badge/Python-3.14-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)
@@ -116,15 +118,19 @@ MAIN_LLM_MODEL=qwen/qwen3.8-27b
 JUDGE_LLM_MODEL=openai/gpt-oss-20b
 ```
 
-Generate a strong secret with:
-
-```bash
-openssl rand -hex 32
-```
+Generate a strong secret with `openssl rand -hex 32`.
 
 > **Format matters.** Docker is strict about `.env` files. Write `KEY=value` with **no spaces around `=`** and **no quotes** around values.
 
-**3. Start everything**
+**3. Start the app**
+
+**Option A: pre-built images from Docker Hub (fastest)**
+
+```bash
+docker compose -f docker-compose.hub.yml up
+```
+
+**Option B: build from source**
 
 ```bash
 docker compose up --build
@@ -141,6 +147,9 @@ docker compose up --build
 Register an account, upload a PDF, DOCX or TXT file, and ask a question.
 
 > Use `localhost:3000`, not `127.0.0.1:3000`. The backend's CORS rules allow `localhost:3000`.
+
+> If you started with Option A, add `-f docker-compose.hub.yml` to the commands below (for example `docker compose -f docker-compose.hub.yml ps`).
+
 
 ### Useful commands
 

@@ -1,0 +1,29 @@
+services:
+  backend:
+    image: vnsh11/trustrag-backend:latest
+    container_name: trustrag-backend
+    env_file: ./backend/.env
+    ports:
+      - "8000:8000"
+    volumes:
+      - trustrag_data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      start_period: 40s
+      retries: 3
+
+  frontend:
+    image: vnsh11/trustrag-frontend:latest
+    container_name: trustrag-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  trustrag_data:
