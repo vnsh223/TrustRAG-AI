@@ -39,7 +39,7 @@ If the judge itself fails, the answer is **not released**. The system fails clos
 
 - **Verified answers.** A separate LLM judge checks every document answer for groundedness and relevance before release.
 - **Clickable citations.** Each answer links to the exact passages it was built from, shown in an Evidence panel with keyword highlighting.
-- **Trust score.** Every answer shows a status badge (Verified, Needs review, Blocked) and a trust score.
+- **Trust score.** Every answer shows a status badge (Verified, Needs review, Blocked) and a trust indicator based on the judge's verdict and the number of supporting sources.
 - **Strict and General modes.** Strict answers only from your document. General mode may use the model's own knowledge and is clearly labeled as unverified.
 - **Private by design.** Accounts use JWT authentication and bcrypt password hashing. Every search is filtered by user ID, and uploads are stored in per-user folders.
 - **Guardrails.** Input validation, prompt-injection blocking, retrieved-context validation and generated-answer validation.
