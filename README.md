@@ -6,9 +6,8 @@
 
 A secure, document-grounded Q&A app where a second AI **judges every answer** against your document before showing it, and every claim comes with clickable citations.
 
+[![Docker build](https://github.com/vnsh223/TrustRAG-AI/actions/workflows/docker.yml/badge.svg)](https://github.com/vnsh223/TrustRAG-AI/actions/workflows/docker.yml)
 [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-vnsh11-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/u/vnsh11)
-[![Docker build](https://github.com/vnsh223/TrustRAG-AI/actions/workflows/docker.yml/badge.svg)]
-(https://github.com/vnsh223/TrustRAG-AI/actions/workflows/docker.yml)
 ![Python](https://img.shields.io/badge/Python-3.14-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)
@@ -27,24 +26,24 @@ One model (Qwen) writes the answer from your document. A different model (GPT-OS
 
 If the judge itself fails, the answer is **not released**. The system fails closed, not open.
 
-<!--
 ## Screenshots
 
 | Login | Workspace |
 |---|---|
 | ![Login page](docs/login.png) | ![Workspace](docs/workspace.png) |
--->
+
+**Want to try it quickly?** Upload [`docs/sample-remote-work-policy.txt`](docs/sample-remote-work-policy.txt), a short fictional company policy, and ask: *"How many days per week must employees be in the office, and what are the core hours?"* You can also ask something the document does not cover (for example, the parental leave policy) to see the guardrails withhold an answer instead of inventing one.
 
 ## Features
 
 - **Verified answers.** A separate LLM judge checks every document answer for groundedness and relevance before release.
 - **Clickable citations.** Each answer links to the exact passages it was built from, shown in an Evidence panel with keyword highlighting.
-- **Trust score.** Every answer shows a status badge (Verified, Needs review, Blocked) and a trust indicator based on the judge's verdict and the number of supporting sources.
+- **Trust indicator.** Every answer shows a status badge (Verified, Needs review, Blocked) and a trust indicator based on the judge's verdict and the number of supporting sources.
 - **Strict and General modes.** Strict answers only from your document. General mode may use the model's own knowledge and is clearly labeled as unverified.
 - **Private by design.** Accounts use JWT authentication and bcrypt password hashing. Every search is filtered by user ID, and uploads are stored in per-user folders.
 - **Guardrails.** Input validation, prompt-injection blocking, retrieved-context validation and generated-answer validation.
 - **Document support.** PDF, DOCX and TXT files up to 50 MB, with duplicate detection by content hash.
-- **One-command deployment.** The whole stack runs with Docker Compose, with health checks and persistent storage.
+- **One-command deployment.** The whole stack runs with Docker Compose, with health checks and persistent storage. Pre-built images are on Docker Hub.
 
 ## How it works
 
@@ -90,7 +89,7 @@ flowchart TB
 | LLMs | Qwen for generation, GPT-OSS for judging, both through the Groq API |
 | Auth | JWT, bcrypt, SQLite |
 | Document parsing | pypdf, python-docx |
-| DevOps | Docker, Docker Compose, GitHub Actions |
+| DevOps | Docker, Docker Compose, Docker Hub, GitHub Actions |
 
 ## Quick start (Docker)
 
@@ -148,9 +147,6 @@ Register an account, upload a PDF, DOCX or TXT file, and ask a question.
 
 > Use `localhost:3000`, not `127.0.0.1:3000`. The backend's CORS rules allow `localhost:3000`.
 
-> If you started with Option A, add `-f docker-compose.hub.yml` to the commands below (for example `docker compose -f docker-compose.hub.yml ps`).
-
-
 ### Useful commands
 
 ```bash
@@ -160,7 +156,16 @@ docker compose down        # stop containers, KEEP your data
 docker compose down -v     # stop containers and DELETE all data
 ```
 
+If you started with Option A, add `-f docker-compose.hub.yml` to these commands (for example `docker compose -f docker-compose.hub.yml ps`).
+
 Your accounts, vector index and uploaded files live in a Docker volume (`trustrag_data`), so they survive restarts and rebuilds.
+
+### Docker Hub images
+
+| Image | Description |
+|---|---|
+| [`vnsh11/trustrag-backend`](https://hub.docker.com/r/vnsh11/trustrag-backend) | FastAPI backend with the RAG pipeline and the embedding model |
+| [`vnsh11/trustrag-frontend`](https://hub.docker.com/r/vnsh11/trustrag-frontend) | Next.js chat interface |
 
 ## Docker design
 
@@ -247,8 +252,10 @@ TrustRAG-AI/
 │   │   └── components/
 │   │       └── AuthScreen.tsx     # Login and registration
 │   └── Dockerfile
+├── docs/                          # Screenshots and a sample document
 ├── evaluation/                    # Evaluation scripts
-├── docker-compose.yml
+├── docker-compose.yml             # Build from source
+├── docker-compose.hub.yml         # Run pre-built images from Docker Hub
 └── .github/workflows/docker.yml   # CI: validate and build images
 ```
 
@@ -261,11 +268,17 @@ TrustRAG-AI/
 - Prompt-injection attempts are blocked before they reach the model.
 - Containers run as non-root users, and secrets are never baked into images.
 
+## Known limitations
+
+- The trust indicator shown in the interface is a heuristic based on the judge's verdict and the number of sources. It is not a calibrated probability.
+- Answers can only be as good as the passages retrieved. If an answer misses something, try raising the **Passages** setting or rephrasing the question.
+- The frontend image has the API address `http://localhost:8000` built in, so it is meant for running both containers on the same machine.
+
 ## Roadmap
 
+- [x] Publish Docker images to Docker Hub
 - [ ] Light and dark theme toggle
 - [ ] Automated tests for the API and the guardrails
-- [ ] Publish Docker images to a container registry
 - [ ] Streaming answers
 
 ## Author
