@@ -1,0 +1,47 @@
+NORTHWIND ANALYTICS
+REMOTE AND HYBRID WORK POLICY
+Version 2.1 (fictional sample document for demonstration purposes)
+
+1. PURPOSE
+
+This policy explains how employees of Northwind Analytics may work from home, from the office, or from another location. It aims to give people flexibility while keeping teams connected and company data safe.
+
+2. ELIGIBILITY
+
+All full-time employees are eligible for hybrid work after they complete the 90-day probation period. Employees still in probation work from the office on all working days so that managers can support their onboarding.
+
+3. HYBRID SCHEDULE
+
+Hybrid employees must be in the office at least 2 days per week. Teams choose their office days together, and managers confirm the schedule at the start of each quarter.
+
+Core working hours are 11:00 to 16:00 India Standard Time (IST). Employees must be available for calls and messages during these hours, whether they work from home or the office.
+
+To protect focus time, there are no internal meetings on Fridays after 14:00.
+
+4. WORK FROM ANYWHERE
+
+Employees may work from another city within India for up to 20 days per calendar year. This needs written approval from the employee's manager at least 10 working days in advance. Work from another country is not covered by this policy and needs separate approval from the HR director.
+
+5. HOME OFFICE SUPPORT
+
+The company provides a one-time home office stipend of INR 15,000 to help employees set up a desk and chair. The company also reimburses internet costs of INR 1,000 per month for employees who work from home at least 2 days per week.
+
+Laptops are refreshed every 3 years. Employees who need a second monitor can request one through the IT service desk.
+
+6. LEAVE
+
+Every employee receives 24 paid leave days and 10 sick days each year. Up to 8 unused paid leave days can be carried forward to the next year. Sick days cannot be carried forward.
+
+7. LEARNING BUDGET
+
+Each employee has a learning budget of INR 25,000 per year for courses, books and certifications. Expense claims must be submitted within 30 days of the purchase date, with a receipt attached.
+
+8. DATA SECURITY
+
+Employees must connect to the company VPN whenever they access internal systems from outside the office. Public Wi-Fi may only be used together with the VPN.
+
+If a company laptop or phone is lost or stolen, the employee must report it to the IT security team within 2 hours of noticing the loss. Company data must never be saved on personal devices or personal cloud storage.
+
+9. QUESTIONS
+
+Questions about this policy can be sent to the HR team at hr@northwind.example.
